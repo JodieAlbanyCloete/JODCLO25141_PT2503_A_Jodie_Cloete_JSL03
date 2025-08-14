@@ -97,3 +97,19 @@ let allTasks = [
   },
   { id: 8, title: "Have fun", description: "Enjoy coding", status: "done" },
 ];
+
+function enterTaskDetails(newId) {
+  let title = prompt(`Enter task ${newId} title:`);
+  let description = prompt(`Enter task ${newId} description:`);
+  let status = prompt(
+    `Enter task ${newId} status (todo,doing,done):`
+  ).toLowerCase();
+  while (status !== "todo" && status !== "doing" && status !== "done") {
+    alert("Invalid status. Please enter 'todo', 'doing' or 'done.");
+    status = prompt(
+      `Enter task ${newId} status (todo, doing,done):`
+    ).toLowerCase();
+  }
+
+  return { id: newId, title, description, status };
+}
