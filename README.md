@@ -1,4 +1,4 @@
-# JSL03 Challenge – Solution Code
+# JSL03 Challenge 
 
 ## Overview
 
