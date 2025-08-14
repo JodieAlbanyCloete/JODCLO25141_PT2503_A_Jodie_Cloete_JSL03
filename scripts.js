@@ -105,17 +105,26 @@ function enterTaskDetails(newId) {
     `Enter task ${newId} status (todo,doing,done):`
   ).toLowerCase();
   while (status !== "todo" && status !== "doing" && status !== "done") {
-    alert("Invalid status. Please enter 'todo', 'doing' or 'done.");
+    alert("Invalid status. Please enter 'todo', 'doing' or 'done'.");
     status = prompt(
-      `Enter task ${newId} status (todo, doing,done):`
+      `Enter task ${newId} status (todo, doing, done):`
     ).toLowerCase();
   }
 
   return { id: newId, title, description, status };
 }
+const newTaskLimit = 3;
+
 // create a push loop to add task to the end of the array
-for (let i = 1; i <= 3; i++) {
+for (let i = 1; i < newTaskLimit; i++) {
   const newId = allTasks.length + 1;
-  const newTask = enterTaskDetails(newId);
-  allTasks.push(newTask);
+
+  if (allTasks.length < 8 + newTaskLimit) {
+    allTasks.push(newTask);
+  } else {
+    alert(
+      "There are enough tasks on your board, please check them in the console"
+    );
+    break;
+  }
 }
