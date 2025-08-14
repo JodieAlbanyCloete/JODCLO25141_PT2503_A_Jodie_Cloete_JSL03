@@ -113,3 +113,9 @@ function enterTaskDetails(newId) {
 
   return { id: newId, title, description, status };
 }
+// create a push loop to add task to the end of the array
+for (let i = 1; i <= 3; i++) {
+  const newId = allTasks.length + 1;
+  const newTask = enterTaskDetails(newId);
+  allTasks.push(newTask);
+}
