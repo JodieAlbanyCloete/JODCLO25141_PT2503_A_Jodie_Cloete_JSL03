@@ -116,11 +116,13 @@ function enterTaskDetails(newId) {
 const newTaskLimit = 3;
 
 // create a push loop to add task to the end of the array
-for (let i = 1; i < newTaskLimit; i++) {
+for (let i = 0; i < newTaskLimit; i++) {
   const newId = allTasks.length + 1;
 
   if (allTasks.length < 8 + newTaskLimit) {
+    const newTask = enterTaskDetails(newId);
     allTasks.push(newTask);
+    newTaskAdded++;
   } else {
     alert(
       "There are enough tasks on your board, please check them in the console"
@@ -128,3 +130,5 @@ for (let i = 1; i < newTaskLimit; i++) {
     break;
   }
 }
+
+console.table(allTasks);
