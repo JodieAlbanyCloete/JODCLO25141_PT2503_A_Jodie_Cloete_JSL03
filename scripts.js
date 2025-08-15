@@ -114,21 +114,32 @@ function enterTaskDetails(newId) {
   return { id: newId, title, description, status };
 }
 const newTaskLimit = 3;
+let newTaskAdded = 0;
 
 // create a push loop to add task to the end of the array
-for (let i = 0; i < newTaskLimit; i++) {
+while (newTaskAdded < newTaskLimit) {
   const newId = allTasks.length + 1;
 
   if (allTasks.length < 8 + newTaskLimit) {
     const newTask = enterTaskDetails(newId);
     allTasks.push(newTask);
     newTaskAdded++;
-  } else {
+  }
+  if (allTasks.length >= 11) {
     alert(
       "There are enough tasks on your board, please check them in the console"
     );
     break;
   }
+
+  if (!newTask || !newTask.title) {
+    break;
+  }
 }
 
+const tasksDone = allTasks.filter(function (task) {
+  return task.status === "done";
+});
+
 console.table(allTasks);
+console.table(tasksDone);
