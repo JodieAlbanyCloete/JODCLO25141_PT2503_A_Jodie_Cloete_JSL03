@@ -1,43 +1,31 @@
-# JSL02 Challenge – Solution Code
+# JSL03 Challenge – Solution Code
 
 ## Overview
 
-This repository provides the **official solution code for the JSL02 challenge**. It is meant to help students verify their understanding of JavaScript fundamentals, particularly **user input validation**, **conditional logic**, and **basic output to the console**.
+This project involves creating a simple task management system where users can add up to three new tasks to an existing task array. Tasks are stored as objects in an array, each with a unique incremental ID. Users will enter task details via prompts, and the system will allow filtering to view only completed tasks. The project focuses on array manipulation, user interaction via prompts and alerts, and console logging for task management.
 
-Students should use this solution to:
+## Technology Used
 
-- Review their approach to handling user input via `prompt()`
-- Compare logic used for validating task statuses (`todo`, `doing`, `done`)
-- Understand how to handle multiple conditional outputs
-- Improve their code readability and structure before continuing to **JSL03**
+- ✅ Interactive JavaScript
+- 🧠 Browser Console - Used to display tasks
+- 💬 Git and Github - For version control and sharing the project.
 
-## Features Covered
-
-The solution demonstrates how to:
-
-- Prompt the user for **titles**, **descriptions**, and **status** of two tasks
-- Validate the entered status to ensure it's one of the allowed options
-- Display a **summary in the console** if a task is marked `"done"`
-- Log a motivational message if **neither** task is completed
-
-## Structure
+## Features
 
 The project includes:
 
 - ✅ Interactive JavaScript to collect and validate user input
 - 🧠 Clear loops for input validation
-- 🔍 Simple logic that checks and logs completion status
-- 💬 Console messages to give meaningful feedback to the user
+- 🔍Validation of inputs to allow only todo, doing and done
+- 💬 Automation of the filtration for completed tasks.
 
-## How to Use This Solution
+## Set Up
 
-1. Open the project folder with **Live Server** in VS Code, then open your browser's **developer console** to view the outputs.
-2. Compare the input handling, validation, and logging logic to your own implementation.
-3. Reflect on any areas where your code could be **cleaner**, **more robust**, or **easier to read**.
-4. Make necessary improvements before continuing to JSL03.
+1. Clone the solution respository.
+2. Ensure that the HTML and JS files are linked.
 
----
+## How it works
 
-## License
-
-This solution code is provided for **educational use only**.
+- A maximum of three new tasks can be added per session.
+- If the board reaches the maximum number of tasks - 11 for this setup - the loop stops.
+- All completed tasks are displayed in the console using console.table.
